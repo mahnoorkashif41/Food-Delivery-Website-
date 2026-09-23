@@ -3,94 +3,91 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Maison Rouge delivers restaurant-quality food, beautifully prepared and brought to your door.">
-  <title>Maison Rouge | Dinner, delivered beautifully</title>
+  <meta name="description" content="Bold Pakistani favorites, crispy comfort food, and beautiful desserts — freshly made and delivered to your door.">
+  <meta name="theme-color" content="#090909">
+  <title>Dastarkhwan | Food worth gathering for</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="icon" type="image/svg+xml" href="assets/images/image-placeholder.svg">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="menu-refinements.css">
+  <link rel="stylesheet" href="responsive-refinements.css">
+  <link rel="stylesheet" href="dark-ui.css">
+  <link rel="stylesheet" href="dark-responsive.css">
+  <link rel="stylesheet" href="redesign.css">
+  <script defer src="script.js?v=redesign-1"></script>
 </head>
 <body>
-  <div class="announcement">Complimentary delivery on orders over $75 <span aria-hidden="true">&middot;</span> Tonight, made memorable</div>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Maison Rouge home"><span class="brand-mark">MR</span><span>Maison<br><em>Rouge</em></span></a>
-    <nav class="main-nav" aria-label="Primary navigation">
-      <a href="#menu">The menu</a>
-      <a href="#story">Our table</a>
-      <a href="#details">Delivery</a>
+  <div class="announcement"><span class="announcement-dot" aria-hidden="true"></span> Free delivery on your first order over PKR 2,000</div>
+  <header class="site-header" id="home">
+    <a class="brand" href="#home" aria-label="Dastarkhwan home"><span class="brand-mark">D</span><span>Dastarkhwan<small>GHAR SE, DIL SE</small></span></a>
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation"><span></span><span></span></button>
+    <nav class="main-nav" id="primary-nav" aria-label="Primary navigation">
+      <a href="#home">Home</a><a href="#menu">Menu</a><a href="#categories">Categories</a><a href="#about">About Us</a><a href="#why-us">Why Us</a><a href="#contact">Contact</a>
     </nav>
-    <button class="cart-trigger" id="open-cart" type="button" aria-label="Open shopping bag">
-      Bag <span class="cart-count" id="cart-count">0</span>
-    </button>
+    <div class="header-actions">
+      <form class="search-form" id="search-form" role="search"><label class="visually-hidden" for="menu-search">Search dishes</label><input id="menu-search" type="search" placeholder="Search dishes"><button type="submit" aria-label="Search dishes"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"></circle><path d="m16 16 4.2 4.2"></path></svg></button></form>
+      <button class="header-icon profile-trigger" type="button" aria-label="Profile"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M4.7 20c.5-3.6 3.4-5.7 7.3-5.7s6.8 2.1 7.3 5.7"></path></svg></button>
+      <button class="cart-trigger" id="open-cart" type="button" aria-label="Open shopping bag">Cart <span class="cart-count" id="cart-count" aria-live="polite">0</span></button>
+      <a class="button button-red header-order" href="#menu">Order Now <span aria-hidden="true">→</span></a>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero section-pad" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">An evening worth staying in</p>
-        <h1 id="hero-title">Good taste<br><em>comes home.</em></h1>
-        <p class="hero-text">Thoughtful dishes, market-fresh ingredients, and the little details that turn dinner into an occasion.</p>
-        <a class="button button-dark" href="#menu">Explore tonight's menu <span aria-hidden="true">&rarr;</span></a>
-        <div class="hero-note"><span class="note-line"></span><span>Curated daily in our kitchen<br>Delivered from our table to yours</span></div>
+  <main>
+    <section class="hero" aria-label="Featured food">
+      <div class="hero-slides" id="hero-slides" aria-live="off">
+        <article class="hero-slide is-active" data-slide="0" aria-hidden="false">
+          <img class="hero-photo" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1800&q=88" alt="Juicy cheeseburger with lettuce, tomato and melted cheese" onerror="this.onerror=null;this.src='assets/images/image-placeholder.svg';">
+          <div class="hero-shade"></div><div class="hero-content"><p class="eyebrow"><span class="eyebrow-rule"></span> Made for your kind of craving</p><h1>Big flavor.<br><em>Made fresh.</em></h1><p class="hero-description">Meet the burger that makes dinner plans for you. Fresh off the grill, straight to your door.</p><a class="button button-red hero-cta" href="#menu" data-hero-category="fast-food">Order your burger <span aria-hidden="true">→</span></a><p class="hero-footnote">Freshly made · Delivered with care</p></div>
+          <div class="hero-product-label"><span>01 / 03</span><strong>The Dastarkhwan burger</strong></div>
+        </article>
+        <article class="hero-slide" data-slide="1" aria-hidden="true" inert>
+          <img class="hero-photo" src="https://images.unsplash.com/photo-1689793606758-6e9de1953a67?auto=format&fit=crop&w=1800&q=88" alt="Freshly baked cheese pizza with basil and a golden crust" onerror="this.onerror=null;this.src='assets/images/image-placeholder.svg';">
+          <div class="hero-shade"></div><div class="hero-content"><p class="eyebrow"><span class="eyebrow-rule"></span> Gather round the good stuff</p><h2>One more slice.<br><em>Always.</em></h2><p class="hero-description">Golden, bubbling cheese and a crisp edge. Your favorite pizza night starts right here.</p><a class="button button-red hero-cta" href="#menu" data-hero-category="pizza">Find your slice <span aria-hidden="true">→</span></a><p class="hero-footnote">Hand-finished · Oven baked</p></div>
+          <div class="hero-product-label"><span>02 / 03</span><strong>Made for sharing</strong></div>
+        </article>
+        <article class="hero-slide" data-slide="2" aria-hidden="true" inert>
+          <img class="hero-photo" src="https://images.unsplash.com/photo-1730900737724-5b752e1ed3dd?auto=format&fit=crop&w=1800&q=88" alt="A plate of crunchy golden fried chicken with lemon" onerror="this.onerror=null;this.src='assets/images/image-placeholder.svg';">
+          <div class="hero-shade"></div><div class="hero-content"><p class="eyebrow"><span class="eyebrow-rule"></span> Hear that first crunch?</p><h2>Golden outside.<br><em>Juicy within.</em></h2><p class="hero-description">Crispy, juicy, and seasoned all the way through. The comfort-food classic, done properly.</p><a class="button button-red hero-cta" href="#menu" data-hero-category="chicken">Get the crunch <span aria-hidden="true">→</span></a><p class="hero-footnote">Crisped fresh · Packed hot</p></div>
+          <div class="hero-product-label"><span>03 / 03</span><strong>Crunch worth craving</strong></div>
+        </article>
       </div>
-      <div class="hero-image-wrap">
-        <img class="hero-image" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=88" alt="A colorful spread of roasted vegetables and fresh herbs">
-        <div class="hero-caption"><span>01</span><span>Seasonal<br>and generous</span></div>
-      </div>
+      <div class="hero-controls"><div class="hero-dots" role="group" aria-label="Featured slide indicators"><span class="hero-dot is-active" role="img" aria-label="Slide 1 of 3" aria-current="true" data-slide-indicator="0"></span><span class="hero-dot" role="img" aria-label="Slide 2 of 3" aria-current="false" data-slide-indicator="1"></span><span class="hero-dot" role="img" aria-label="Slide 3 of 3" aria-current="false" data-slide-indicator="2"></span></div><button class="hero-play-toggle" id="hero-play-toggle" type="button" aria-label="Pause automatic slides" aria-pressed="false">Ⅱ</button><span class="hero-autoplay-label">01 <span></span> 03 &nbsp; / &nbsp; AUTO PLAY</span></div>
     </section>
 
-    <section class="intro section-pad" id="story" aria-labelledby="story-title">
-      <div class="section-label"><span>02</span><span>At the table</span></div>
-      <div class="intro-content">
-        <h2 id="story-title">The best nights<br>are shared.</h2>
-        <div>
-          <p class="lead">Maison Rouge is a modern neighborhood kitchen with a soft spot for the long way around.</p>
-          <p>We source with care, cook with restraint, and deliver every dish with the same warmth it had when it left our pass. Come for the comfort, stay for the second helping.</p>
-          <a class="text-link" href="#menu">Meet the menu <span aria-hidden="true">&rarr;</span></a>
-        </div>
-      </div>
+    <section class="category-section section-pad" id="categories" aria-labelledby="category-title">
+      <div class="section-heading"><div><p class="eyebrow">Your next favorite is here</p><h2 id="category-title">What are you <em>craving?</em></h2></div><a class="text-link" href="#menu">Explore all dishes <span aria-hidden="true">→</span></a></div>
+      <div class="category-grid" id="category-nav" aria-label="Filter menu by category"></div>
     </section>
 
     <section class="menu-section section-pad" id="menu" aria-labelledby="menu-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">Made for tonight</p><h2 id="menu-title">From our kitchen</h2></div>
-        <p class="section-aside">A considered collection of<br>house favorites and new rituals.</p>
-      </div>
-      <div class="menu-grid" id="menu-grid"></div>
+      <div class="section-heading menu-heading"><div><p class="eyebrow">Loved around the table</p><h2 id="menu-title">Popular <em>dishes.</em></h2></div><p class="section-aside">The crowd favorites, made fresh<br>and ready when you are.</p></div>
+      <div class="menu-toolbar"><div class="menu-filter-status" id="menu-filter-status" aria-live="polite">Showing all dishes</div><button class="clear-search" id="clear-search" type="button" hidden>Clear search <span aria-hidden="true">×</span></button></div>
+      <div class="menu-grid" id="menu-grid" aria-live="polite"></div>
     </section>
 
-    <section class="quote-band" aria-label="Maison Rouge philosophy">
-      <div class="quote-inner"><span class="quote-mark">&ldquo;</span><blockquote>There is no such thing as<br>a meal too beautiful for a weeknight.</blockquote><span class="quote-by">Maison Rouge, est. 2018</span></div>
+    <section class="why-section section-pad" id="why-us" aria-labelledby="why-title">
+      <div class="why-intro"><p class="eyebrow">Good food, good feeling</p><h2 id="why-title">A little more<br>care in <em>every bite.</em></h2><p>From the kitchen to your doorstep, we keep the good stuff simple: fresh food, thoughtful service, and no shortcuts.</p><a class="text-link" href="#about">Our promise to you <span aria-hidden="true">→</span></a></div>
+      <div class="benefit-grid"><article class="benefit"><span class="benefit-number">01</span><span class="benefit-icon" aria-hidden="true">↗</span><h3>Fast delivery</h3><p>Hot food and a clear arrival estimate, right to your door.</p></article><article class="benefit"><span class="benefit-number">02</span><span class="benefit-icon" aria-hidden="true">✳</span><h3>Fresh, every time</h3><p>Prepared to order with ingredients we’re proud to serve.</p></article><article class="benefit"><span class="benefit-number">03</span><span class="benefit-icon" aria-hidden="true">⌖</span><h3>Real-time tracking</h3><p>Order status updates keep you in the loop from kitchen to doorstep.</p></article><article class="benefit"><span class="benefit-number">04</span><span class="benefit-icon" aria-hidden="true">✓</span><h3>Secure checkout</h3><p>A simple, secure checkout experience every time you order.</p></article><article class="benefit"><span class="benefit-number">05</span><span class="benefit-icon" aria-hidden="true">✦</span><h3>Quality you can taste</h3><p>Thoughtful ingredients, generous portions, and care in every dish.</p></article></div>
     </section>
 
-    <section class="details section-pad" id="details" aria-labelledby="details-title">
-      <div class="details-image"><img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=85" alt="Elegant restaurant table set for an evening meal"></div>
-      <div class="details-copy"><p class="eyebrow">The fine print</p><h2 id="details-title">A little closer<br>to your door.</h2><div class="detail-list"><div><strong>01</strong><span><b>Delivery windows</b><br>5:00pm &ndash; 10:00pm, every day</span></div><div><strong>02</strong><span><b>Made to order</b><br>Allow 25&ndash;40 minutes for your table</span></div><div><strong>03</strong><span><b>Good to know</b><br>Complimentary delivery over $75</span></div></div><a class="button button-dark" href="#menu">Order for tonight <span aria-hidden="true">&rarr;</span></a></div>
-    </section>
+    <section class="promo-section section-pad" aria-labelledby="promo-title"><div class="promo-copy"><p class="eyebrow">A little something for tonight</p><h2 id="promo-title">Good food tastes<br>even better <em>together.</em></h2><p>Gather your favorites, pull up a chair, and make tonight delicious.</p><a class="button button-light" href="#menu">Find your favorites <span aria-hidden="true">→</span></a></div><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1000&q=85" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/images/image-placeholder.svg';"></section>
+
+    <section class="restaurants-section section-pad" id="restaurants" aria-labelledby="restaurant-title"><div class="section-heading"><div><p class="eyebrow">Good food, close to home</p><h2 id="restaurant-title">Find your <em>table.</em></h2></div><p class="section-aside">A few neighborhood favorites<br>we think you’ll love.</p></div><div class="restaurant-grid"><article class="restaurant-card"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=900&q=85" alt="Chicken karahi with tomatoes and herbs" loading="lazy" onerror="this.onerror=null;this.src='assets/images/image-placeholder.svg';"><div class="restaurant-card-content"><div><p class="restaurant-type">PAKISTANI · GRILL</p><h3>The Spice Courtyard</h3></div><span class="restaurant-rating">★ 4.9</span><p>Bold karahi, slow-cooked handi, and charcoal favorites.</p><a href="#menu" data-restaurant-category="pakistani">Explore the menu <span aria-hidden="true">→</span></a></div></article><article class="restaurant-card"><img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=900&q=85" alt="Assorted freshly fried chicken served hot" loading="lazy" onerror="this.onerror=null;this.src='assets/images/image-placeholder.svg';"><div class="restaurant-card-content"><div><p class="restaurant-type">CHICKEN · COMFORT FOOD</p><h3>Cluck &amp; Co.</h3></div><span class="restaurant-rating">★ 4.8</span><p>Crunchy, juicy chicken made fresh for the whole table.</p><a href="#menu" data-restaurant-category="chicken">Explore the menu <span aria-hidden="true">→</span></a></div></article><article class="restaurant-card"><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=85" alt="Creamy pasta finished with herbs" loading="lazy" onerror="this.onerror=null;this.src='assets/images/image-placeholder.svg';"><div class="restaurant-card-content"><div><p class="restaurant-type">PASTA · ITALIAN</p><h3>Sunday Sauce</h3></div><span class="restaurant-rating">★ 4.7</span><p>Comforting pasta, baked lasagna, and sweet endings.</p><a href="#menu" data-restaurant-category="pasta">Explore the menu <span aria-hidden="true">→</span></a></div></article></div></section>
+
+    <section class="reviews-section section-pad" aria-labelledby="reviews-title"><div class="review-heading"><p class="eyebrow">Kind words, full hearts</p><h2 id="reviews-title">The table <em>talks.</em></h2></div><div class="review-carousel" id="review-carousel" aria-live="polite" aria-atomic="true"><article class="review-card is-active"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“The karahi tasted like someone’s favorite family recipe. Everything arrived hot, beautifully packed, and generous.”</blockquote><div class="review-person"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&h=120&q=80" alt="" loading="lazy"><div><strong>Ayesha R.</strong><span>Karachi <b>·</b> <span class="verified">✓ Verified order</span></span></div></div></article><article class="review-card" aria-hidden="true"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“That crispy chicken is a serious weeknight upgrade. The family finished every last piece before I got seconds.”</blockquote><div class="review-person"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&h=120&q=80" alt="" loading="lazy"><div><strong>Hamza K.</strong><span>Lahore <b>·</b> <span class="verified">✓ Verified order</span></span></div></div></article><article class="review-card" aria-hidden="true"><div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Ordering was easy, the portions were generous, and the brownie was gone in about thirty seconds.”</blockquote><div class="review-person"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=120&h=120&q=80" alt="" loading="lazy"><div><strong>Maryam S.</strong><span>Islamabad <b>·</b> <span class="verified">✓ Verified order</span></span></div></div></article></div></section>
+
+    <section class="about-section section-pad" id="about" aria-labelledby="about-title"><div class="about-image"><img src="assets/images/karahi.jpg" alt="Freshly cooked Pakistani karahi garnished with herbs" loading="lazy"></div><div class="about-copy"><p class="eyebrow">A place at our table</p><h2 id="about-title">Made with heart.<br><em>Shared with you.</em></h2><p class="about-lead">Dastarkhwan means more than a spread of food. It’s the welcome, the warmth, and the extra serving offered before you have to ask.</p><p>We bring that spirit to every dish we make: Pakistani favorites, familiar comforts, and fresh discoveries prepared with care.</p><a class="button button-red" href="#menu">Come hungry <span aria-hidden="true">→</span></a></div></section>
   </main>
 
-  <footer class="site-footer"><div class="footer-brand"><span class="brand-mark">MR</span><span>Maison Rouge</span></div><p>Food for the beautifully ordinary.</p><div class="footer-meta"><span>&copy; 2024 Maison Rouge</span><span>New York &middot; London &middot; Everywhere</span></div></footer>
+  <footer class="site-footer" id="contact"><div class="footer-main"><div class="footer-about"><a class="brand" href="#home"><span class="brand-mark">D</span><span>Dastarkhwan<small>GHAR SE, DIL SE</small></span></a><h2>Good food brings us together.</h2><p>Pakistani favorites and familiar comforts, made with heart and shared with you.</p></div><div class="footer-columns"><div class="footer-column"><h3>Quick links</h3><a href="#home">Home</a><a href="#menu">Our menu</a><a href="#restaurants">Restaurants</a><a href="#about">About us</a></div><div class="footer-column"><h3>Categories</h3><a href="#menu" data-footer-category="fast-food">Fast food</a><a href="#menu" data-footer-category="chicken">Chicken</a><a href="#menu" data-footer-category="pizza">Pizza</a><a href="#menu" data-footer-category="pasta">Pasta &amp; lasagna</a><a href="#menu" data-footer-category="chinese">Chinese</a><a href="#menu" data-footer-category="pakistani">Pakistani</a><a href="#menu" data-footer-category="desserts">Desserts</a><a href="#menu" data-footer-category="drinks">Drinks</a></div><div class="footer-column"><h3>Support</h3><a href="#why-us">Why choose us</a><a href="#menu">Ordering help</a><a href="#contact">Delivery information</a><a href="#contact">Terms &amp; privacy</a></div><div class="footer-column"><h3>Contact</h3><span>Karachi, Pakistan</span><span>Open daily · 12pm–11pm</span><a href="mailto:hello@dastarkhwan.example">hello@dastarkhwan.example</a><a class="button button-red footer-order" href="#menu">Order Now <span aria-hidden="true">→</span></a></div></div></div><div class="footer-meta"><span>© 2026 Dastarkhwan. All rights reserved.</span><span>Karachi · Lahore · Islamabad</span><a href="#home">Back to top ↑</a></div></footer>
 
   <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
-  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
-    <div class="drawer-header"><div><p class="eyebrow">Your evening</p><h2 id="cart-title">Your bag</h2></div><button class="icon-button" id="close-cart" type="button" aria-label="Close shopping bag">&times;</button></div>
-    <div class="cart-content" id="cart-content"></div>
-    <div class="cart-footer" id="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="cart-total">$0.00</strong></div><p class="delivery-note">Delivery and taxes calculated at checkout.</p><button class="button button-red checkout-trigger" id="checkout-trigger" type="button">Continue to checkout <span aria-hidden="true">&rarr;</span></button></div>
-  </aside>
-
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true" inert><div class="drawer-header"><div><p class="eyebrow">Your order</p><h2 id="cart-title">Your bag</h2></div><button class="icon-button" id="close-cart" type="button" aria-label="Close shopping bag">×</button></div><div class="cart-content" id="cart-content"></div><div class="cart-footer" id="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="cart-total">PKR 0</strong></div><p class="delivery-note">Delivery and taxes calculated at checkout.</p><button class="button button-red checkout-trigger" id="checkout-trigger" type="button">Continue to checkout <span aria-hidden="true">→</span></button></div></aside>
   <div class="modal-backdrop" id="checkout-backdrop" hidden></div>
-  <section class="checkout-modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" aria-hidden="true">
-    <div class="drawer-header"><div><p class="eyebrow">Almost there</p><h2 id="checkout-title">Make it yours.</h2></div><button class="icon-button" id="close-checkout" type="button" aria-label="Close checkout">&times;</button></div>
-    <form class="checkout-form" id="checkout-form" novalidate>
-      <div class="form-grid"><label>Full name<input type="text" name="name" autocomplete="name" required placeholder="Your name"><small class="form-error"></small></label><label>Phone number<input type="tel" name="phone" autocomplete="tel" required placeholder="(555) 123-4567"><small class="form-error"></small></label></div>
-      <label>Delivery address<input type="text" name="address" autocomplete="street-address" required placeholder="123 Main Street, apartment 4"><small class="form-error"></small></label>
-      <label>Anything we should know? <span class="optional">Optional</span><textarea name="notes" rows="3" placeholder="A note for the kitchen or your courier"></textarea></label>
-      <div class="order-review"><span>Your order</span><strong id="checkout-total">$0.00</strong></div>
-      <button class="button button-red" type="submit">Place order <span aria-hidden="true">&rarr;</span></button>
-      <p class="form-status" id="form-status" role="status"></p>
-    </form>
-  </section>
+  <section class="checkout-modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" aria-hidden="true" inert><div class="drawer-header"><div><p class="eyebrow">Almost there</p><h2 id="checkout-title">Make it yours.</h2></div><button class="icon-button" id="close-checkout" type="button" aria-label="Close checkout">×</button></div><form class="checkout-form" id="checkout-form" novalidate><div class="form-grid"><label>Full name<input type="text" name="name" autocomplete="name" required placeholder="Your name"><small class="form-error"></small></label><label>Phone number<input type="tel" name="phone" autocomplete="tel" required placeholder="03XX XXXXXXX"><small class="form-error"></small></label></div><div class="form-grid"><label>City / area<input type="text" name="city" autocomplete="address-level2" required placeholder="DHA, Gulberg, F-7"><small class="form-error"></small></label><label>Delivery address<input type="text" name="address" autocomplete="street-address" required placeholder="House, street, landmark"><small class="form-error"></small></label></div><label>Anything we should know? <span class="optional">Optional</span><textarea name="notes" rows="3" placeholder="A note for the kitchen or your courier"></textarea></label><div class="order-review"><span>Your order</span><strong id="checkout-total">PKR 0</strong></div><button class="button button-red" type="submit">Place order <span aria-hidden="true">→</span></button><p class="form-status" id="form-status" role="status"></p></form></section>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
