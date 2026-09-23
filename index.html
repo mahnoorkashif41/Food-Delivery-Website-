@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Maison Rouge delivers restaurant-quality food, beautifully prepared and brought to your door.">
+  <title>Maison Rouge | Dinner, delivered beautifully</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="announcement">Complimentary delivery on orders over $75 <span aria-hidden="true">&middot;</span> Tonight, made memorable</div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Maison Rouge home"><span class="brand-mark">MR</span><span>Maison<br><em>Rouge</em></span></a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <a href="#menu">The menu</a>
+      <a href="#story">Our table</a>
+      <a href="#details">Delivery</a>
+    </nav>
+    <button class="cart-trigger" id="open-cart" type="button" aria-label="Open shopping bag">
+      Bag <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-pad" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">An evening worth staying in</p>
+        <h1 id="hero-title">Good taste<br><em>comes home.</em></h1>
+        <p class="hero-text">Thoughtful dishes, market-fresh ingredients, and the little details that turn dinner into an occasion.</p>
+        <a class="button button-dark" href="#menu">Explore tonight's menu <span aria-hidden="true">&rarr;</span></a>
+        <div class="hero-note"><span class="note-line"></span><span>Curated daily in our kitchen<br>Delivered from our table to yours</span></div>
+      </div>
+      <div class="hero-image-wrap">
+        <img class="hero-image" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1400&q=88" alt="A colorful spread of roasted vegetables and fresh herbs">
+        <div class="hero-caption"><span>01</span><span>Seasonal<br>and generous</span></div>
+      </div>
+    </section>
+
+    <section class="intro section-pad" id="story" aria-labelledby="story-title">
+      <div class="section-label"><span>02</span><span>At the table</span></div>
+      <div class="intro-content">
+        <h2 id="story-title">The best nights<br>are shared.</h2>
+        <div>
+          <p class="lead">Maison Rouge is a modern neighborhood kitchen with a soft spot for the long way around.</p>
+          <p>We source with care, cook with restraint, and deliver every dish with the same warmth it had when it left our pass. Come for the comfort, stay for the second helping.</p>
+          <a class="text-link" href="#menu">Meet the menu <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section section-pad" id="menu" aria-labelledby="menu-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Made for tonight</p><h2 id="menu-title">From our kitchen</h2></div>
+        <p class="section-aside">A considered collection of<br>house favorites and new rituals.</p>
+      </div>
+      <div class="menu-grid" id="menu-grid"></div>
+    </section>
+
+    <section class="quote-band" aria-label="Maison Rouge philosophy">
+      <div class="quote-inner"><span class="quote-mark">&ldquo;</span><blockquote>There is no such thing as<br>a meal too beautiful for a weeknight.</blockquote><span class="quote-by">Maison Rouge, est. 2018</span></div>
+    </section>
+
+    <section class="details section-pad" id="details" aria-labelledby="details-title">
+      <div class="details-image"><img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1200&q=85" alt="Elegant restaurant table set for an evening meal"></div>
+      <div class="details-copy"><p class="eyebrow">The fine print</p><h2 id="details-title">A little closer<br>to your door.</h2><div class="detail-list"><div><strong>01</strong><span><b>Delivery windows</b><br>5:00pm &ndash; 10:00pm, every day</span></div><div><strong>02</strong><span><b>Made to order</b><br>Allow 25&ndash;40 minutes for your table</span></div><div><strong>03</strong><span><b>Good to know</b><br>Complimentary delivery over $75</span></div></div><a class="button button-dark" href="#menu">Order for tonight <span aria-hidden="true">&rarr;</span></a></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-brand"><span class="brand-mark">MR</span><span>Maison Rouge</span></div><p>Food for the beautifully ordinary.</p><div class="footer-meta"><span>&copy; 2024 Maison Rouge</span><span>New York &middot; London &middot; Everywhere</span></div></footer>
+
+  <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="drawer-header"><div><p class="eyebrow">Your evening</p><h2 id="cart-title">Your bag</h2></div><button class="icon-button" id="close-cart" type="button" aria-label="Close shopping bag">&times;</button></div>
+    <div class="cart-content" id="cart-content"></div>
+    <div class="cart-footer" id="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="cart-total">$0.00</strong></div><p class="delivery-note">Delivery and taxes calculated at checkout.</p><button class="button button-red checkout-trigger" id="checkout-trigger" type="button">Continue to checkout <span aria-hidden="true">&rarr;</span></button></div>
+  </aside>
+
+  <div class="modal-backdrop" id="checkout-backdrop" hidden></div>
+  <section class="checkout-modal" id="checkout-modal" role="dialog" aria-modal="true" aria-labelledby="checkout-title" aria-hidden="true">
+    <div class="drawer-header"><div><p class="eyebrow">Almost there</p><h2 id="checkout-title">Make it yours.</h2></div><button class="icon-button" id="close-checkout" type="button" aria-label="Close checkout">&times;</button></div>
+    <form class="checkout-form" id="checkout-form" novalidate>
+      <div class="form-grid"><label>Full name<input type="text" name="name" autocomplete="name" required placeholder="Your name"><small class="form-error"></small></label><label>Phone number<input type="tel" name="phone" autocomplete="tel" required placeholder="(555) 123-4567"><small class="form-error"></small></label></div>
+      <label>Delivery address<input type="text" name="address" autocomplete="street-address" required placeholder="123 Main Street, apartment 4"><small class="form-error"></small></label>
+      <label>Anything we should know? <span class="optional">Optional</span><textarea name="notes" rows="3" placeholder="A note for the kitchen or your courier"></textarea></label>
+      <div class="order-review"><span>Your order</span><strong id="checkout-total">$0.00</strong></div>
+      <button class="button button-red" type="submit">Place order <span aria-hidden="true">&rarr;</span></button>
+      <p class="form-status" id="form-status" role="status"></p>
+    </form>
+  </section>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
